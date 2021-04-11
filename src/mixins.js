@@ -50,6 +50,8 @@ const mixins = {
         el.mozRequestFullScreen()
       } else if (el.webkitRequestFullscreen) {
         el.webkitRequestFullscreen()
+      }else if (el.msRequestFullscreen){
+        el.msRequestFullscreen()
       } else if (el.requestFullScreen) {
         el.requestFullscreen()
       }
@@ -66,6 +68,8 @@ const mixins = {
         document.mozCancelFullScreen()
       } else if (document.webkitCancelFullScreen) {
         document.webkitCancelFullScreen()
+      } else if (document.msExitFullscreen){
+        document.msExitFullscreen()
       } else if (document.cancelFullScreen) {
         document.cancelFullScreen()
       }
