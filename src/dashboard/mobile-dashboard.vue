@@ -43,7 +43,9 @@ export default {
         // TODO handle force show
       } else {
         this._hideTimeout = setTimeout(() => {
-          this.hideDashboard()
+          if (this.isPlaying) {
+            this.hideDashboard()
+          }
         }, delay || DEFAULT_CONFIG.dashboardHideDelay)
       }
     },
