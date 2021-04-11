@@ -7,7 +7,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="24.485" height="23" viewBox="0 0 24.485 23"><g fill="#fff"><path data-name="矩形 15" d="M0 5.5h7v12H0z"/><path data-name="多边形 3" d="M.5 11.5L12.5 0v23z"/><g data-name="组 3"><path data-name="矩形 39" d="M23.071 7.257l1.414 1.414-7.07 7.071L16 14.328z"/><path data-name="矩形 40" d="M16 8.672l1.414-1.414 7.071 7.07-1.414 1.415z"/></g></g></svg>
     </div>
 
-    <div class="btn-control-panel">
+    <div class="btn-control-panel" v-if="tunable">
       <div class="progress" @click="seek">
         <div class="volume-current" :style="{height: volume + '%'}">
           <div class="thumb-drag"></div>
@@ -26,7 +26,11 @@ export default {
   name: 'Volume',
   props: {
     visible: Boolean,
-    muted: Boolean
+    muted: Boolean,
+    tunable: {
+      type: Boolean,
+      default: true
+    }
   },
   mixins: [coreMixins],
   data () {
