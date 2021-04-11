@@ -58,7 +58,7 @@ export default {
       } else {
         $parent.addEventListener('mousemove', this._onMousemove.bind(this))
         $parent.addEventListener('mouseleave', this._onMouseleave.bind(this))
-        $parent.addEventListener('mouseover', this._onMouseover.bind(this), true)
+        // $parent.addEventListener('mouseover', this._onMouseover.bind(this), true)
       }
       // first render delay
       this.showDashboard(4000)
@@ -80,9 +80,9 @@ export default {
     _onMouseleave () {
       this.showDashboard()
     },
-    _onMouseover () {
-      this.showDashboard(0)
-    },
+    // _onMouseover () {
+    //   this.showDashboard(0)
+    // },
     _onTouchend () {
       this.showDashboard()
     }
