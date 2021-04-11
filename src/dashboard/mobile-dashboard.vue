@@ -96,6 +96,10 @@ export default {
     } else {
       this._initAutoMode()
     }
+
+    this.on(EVENTS.ENDED, () => {
+      this.showDashboard(0)
+    })
   }
 }
 </script>
